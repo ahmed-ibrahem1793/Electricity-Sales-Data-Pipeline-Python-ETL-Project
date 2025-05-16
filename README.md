@@ -1,6 +1,61 @@
-Electricity Sales Data Pipeline | Python ETL Project
-Built an end-to-end ETL pipeline in Python to process electricity sales data, extracting from CSV/JSON sources, transforming with Pandas, and loading to Parquet/CSV for optimized storage.
-Engineered data transformations to filter residential/transportation sector records, clean missing values (price), and derive time dimensions (year/month) from raw timestamps, improving analysis readiness.
-Implemented schema-aware data validation by enforcing file formats (CSV/Parquet/JSON) and handling edge cases (NA drops, column selection).
-Automated loading with dynamic file-type detection, reducing manual effort for future dataset updates.
-Tech Stack: Python, Pandas (ETL), JSON/CSV/Parquet data formats, Data Cleaning, Modular Python Functions.
+⚙️ Technical Details
+🔧 Functions
+extract_tabular_data(file_path)
+
+Reads CSV/Parquet files using Pandas.
+
+Validates file extensions for compatibility.
+
+extract_json_data(file_path)
+
+Flattens nested JSON into a structured DataFrame using pd.json_normalize().
+
+transform_electricity_sales_data(raw_data)
+
+Drops records with missing price values.
+
+Filters for residential and transportation sectors.
+
+Derives year and month columns from the period field.
+
+load(dataframe, file_path)
+
+Saves DataFrames to CSV or Parquet with dynamic format detection.
+
+📊 Data Flow
+Diagram
+Code
+
+
+
+
+🚀 Getting Started
+Prerequisites
+Python 3.8+
+
+Libraries: pandas, pyarrow (for Parquet support)
+
+Installation
+bash
+pip install pandas pyarrow
+Usage
+Place your raw data files (electricity_sales.csv, electricity_capability_nested.json) in the project directory.
+
+Run the script:
+
+python
+python etl_pipeline.py
+Outputs:
+
+loaded__electricity_capability.parquet
+
+loaded__electricity_sales.csv
+
+🛠️ Tech Stack
+ETL: Pandas (Python)
+
+Data Formats: JSON, CSV, Parquet
+
+Data Cleaning: Missing value handling, type conversion, column filtering
+
+Optimization: Parquet for storage efficiency
