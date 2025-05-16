@@ -1,4 +1,5 @@
 ⚙️ Technical Details
+
 🔧 Functions
 extract_tabular_data(file_path)
 
