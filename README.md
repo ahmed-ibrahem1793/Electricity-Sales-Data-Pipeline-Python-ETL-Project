@@ -1,5 +1,4 @@
-
-Electricity Sales Data Pipeline | Python ETL Project
+**Electricity Sales Data Pipeline | Python ETL Project**
 
 Built an end-to-end ETL pipeline in Python to process electricity sales data, extracting from CSV/JSON sources, transforming with Pandas, and loading to Parquet/CSV for optimized storage.
 
